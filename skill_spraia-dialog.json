@@ -1,0 +1,585 @@
+{
+  "intents": [
+    {
+      "intent": "denuncia",
+      "examples": [
+        {
+          "text": "Denúncia"
+        },
+        {
+          "text": "Denunciar"
+        },
+        {
+          "text": "Fazer denúncia"
+        },
+        {
+          "text": "Quero fazer uma denúncia"
+        }
+      ],
+      "description": "Captura inteção de realizar denúncia"
+    },
+    {
+      "intent": "despedida",
+      "examples": [
+        {
+          "text": "Até mais"
+        },
+        {
+          "text": "Obrigado Bot"
+        },
+        {
+          "text": "Tchau"
+        }
+      ],
+      "description": "Captura despedida do usuário"
+    },
+    {
+      "intent": "dica",
+      "examples": [
+        {
+          "text": "Dica"
+        },
+        {
+          "text": "Dicas"
+        },
+        {
+          "text": "Quero dicas"
+        }
+      ],
+      "description": "Dicas"
+    },
+    {
+      "intent": "saudacao",
+      "examples": [
+        {
+          "text": "Oi"
+        },
+        {
+          "text": "Oi bot"
+        },
+        {
+          "text": "Olá"
+        },
+        {
+          "text": "Olá bot"
+        }
+      ],
+      "description": "Saudação"
+    },
+    {
+      "intent": "sobreempresa",
+      "examples": [
+        {
+          "text": "Empresa"
+        },
+        {
+          "text": "Sobre"
+        },
+        {
+          "text": "Sobre a empresa"
+        },
+        {
+          "text": "Sobre empresa"
+        }
+      ],
+      "description": "Sobre a Empresa"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "descricao",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Derramamento de esgoto",
+          "synonyms": [
+            "Derramamento",
+            "Esgoto"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Lixo no mar",
+          "synonyms": [
+            "Lixo"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Resíduos na areia",
+          "synonyms": [
+            "Resíduos"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "praia",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Bertioga",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Cananéia",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Caraguatatuba",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Guarujá",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Iguape",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Ilhabela",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Ilha Comprida",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Itanhaém",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Mongaguá",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Peruíbe",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Praia Grande",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Santos",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "São Sebastião",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "São Vicente",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Ubatuba",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sim-nao",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "nao",
+          "synonyms": [
+            "não"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "sim",
+          "synonyms": [
+            "certo",
+            "ok"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "start",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "/start",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Bem-vindo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá. Sou a Sophie, como posso te ajudar?\nPosso te ajudar com algumas opções:\n- Realizar denúncia\n- Dicas\n- Sobre a empresa"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "welcome || @start || #saudacao",
+      "dialog_node": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Em outros casos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Eu não entendi. Você pode tentar reformular a frase."
+              },
+              {
+                "text": "Você pode reformular sua afirmação? Eu não estou entendendo."
+              },
+              {
+                "text": "Eu não entendi o sentido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "node_4_1665904841544",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "A sua denúncia é referente a $praia, e sua descrição é $descricao, correto?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_7_1665907060053",
+      "event_name": "focus",
+      "dialog_node": "handler_10_1665907060056",
+      "previous_sibling": "handler_6_1665907060056"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Legal, vou te ajudar. Irei fazer algumas perguntas para definir sua denúncia tudo bem?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_2_1665906209489",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1665906209502",
+      "previous_sibling": "handler_2_1665906209502"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1665906209489",
+      "context": {
+        "sim_nao": "@sim-nao:sim"
+      },
+      "conditions": "@sim-nao:sim",
+      "event_name": "input",
+      "dialog_node": "handler_2_1665906209502"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1665906775873",
+      "context": {
+        "descricao": "@descricao"
+      },
+      "conditions": "@descricao",
+      "event_name": "input",
+      "dialog_node": "handler_2_1665906775874"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Para qual praia você quer realizar essa denúncia?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_8_1665906653154",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1665906653156",
+      "previous_sibling": "handler_5_1665906653156"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1665906653154",
+      "context": {
+        "praia": "@praia"
+      },
+      "conditions": "@praia",
+      "event_name": "input",
+      "dialog_node": "handler_5_1665906653156"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Qual das opções a seguir melhor se encaixa com sua denúncia?\n- Derramamento de esgoto\n- Lixo no mar\n- Resíduos na areia"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_4_1665906775873",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1665906775874",
+      "previous_sibling": "handler_2_1665906775874"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1665907060053",
+      "context": {
+        "s_n": "@sim-nao:sim"
+      },
+      "conditions": "@sim-nao:sim",
+      "event_name": "input",
+      "dialog_node": "handler_6_1665907060056"
+    },
+    {
+      "type": "frame",
+      "title": "Realizar Denúncia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sua denúncia foi cadastrada com sucesso, ok?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_6_1665919595698"
+      },
+      "conditions": "#denuncia",
+      "dialog_node": "node_1_1665905331010",
+      "previous_sibling": "node_9_1665953342114"
+    },
+    {
+      "type": "standard",
+      "title": "Agradecimento",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Obrigada, até mais!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#despedida",
+      "dialog_node": "node_4_1665904841544",
+      "previous_sibling": "node_6_1665919595698"
+    },
+    {
+      "type": "standard",
+      "title": "Denúncia Efetuada com Sucesso",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Obrigada, sua denúncia será analisada e atendida por uma ONG assim que possível!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "s_n": null,
+        "praia": null,
+        "sim_nao": null,
+        "descricao": null
+      },
+      "conditions": "@sim-nao",
+      "dialog_node": "node_6_1665919595698",
+      "previous_sibling": "node_1_1665905331010"
+    },
+    {
+      "type": "standard",
+      "title": "Dica",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Não jogue lixo no chão. Carregue-o até a lixeira mais próxima. Ensine às crianças dando exemplo."
+              },
+              {
+                "text": "Recicle ou reaproveite tudo o que puder."
+              },
+              {
+                "text": "Não desperdice água. esse é um dos recursos mais importantes e frágeis do planeta: feche torneiras, conserte vazamentos, não use mangueiras para para lavar calçadas, aproveite água de chuva"
+              },
+              {
+                "text": "Evite jogar materiais não degradáveis (plásticos ou outros) no ambiente."
+              },
+              {
+                "text": "Tenha sempre a mão uma sacolinha e no final do dia é só jogá-la no lixo, deixando a praia mais limpa e bonita!"
+              },
+              {
+                "text": "Não destrua ou danifique a vegetação litorânea, tanto nas praias como nas trilhas."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#dica",
+      "dialog_node": "node_7_1665951073096",
+      "previous_sibling": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Sobre a Empresa",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Somos a empresa ZeniTI, entramos no mercado para cuidar do meio ambiente. \nAtualmente as praias de São Paulo vem sendo poluídas drasticamente, sendo assim, oferecemos a oportunidade de fazer denúncias referente a esse problema.\nNós queremos salvar o planeta através da tecnologia e praticidade."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#sobreempresa",
+      "dialog_node": "node_9_1665953342114",
+      "previous_sibling": "node_7_1665951073096"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1665905331010",
+      "variable": "$sim_nao",
+      "dialog_node": "slot_2_1665906209489"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1665905331010",
+      "variable": "$descricao",
+      "dialog_node": "slot_4_1665906775873",
+      "previous_sibling": "slot_8_1665906653154"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1665905331010",
+      "variable": "$s_n",
+      "dialog_node": "slot_7_1665907060053",
+      "previous_sibling": "slot_4_1665906775873"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1665905331010",
+      "variable": "$praia",
+      "dialog_node": "slot_8_1665906653154",
+      "previous_sibling": "slot_2_1665906209489"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Você quis dizer:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nenhuma das anteriores"
+    },
+    "human_agent_assist": {
+      "prompt": "Você quis dizer:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "skill_spraia",
+  "language": "pt-br",
+  "description": "Skill do Bot SPraia"
+}
