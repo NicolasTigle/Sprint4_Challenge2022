@@ -1,8 +1,8 @@
 # Entrega Sprint 4 - Challenge 2022
 
-# Projeto SPraia
+## Projeto SPraia
 
-# Integrantes do Grupo:
+### Integrantes do Grupo:
 
 #### Amanda da Silva Fernandes - RM86688 
 #### Gabriel Antonio Luiz Tomaz Assunção - RM86675
