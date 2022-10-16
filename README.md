@@ -4,11 +4,11 @@
 
 # Integrantes do Grupo:
 
-Amanda da Silva Fernandes - RM86688 \n
-Gabriel Antonio Luiz Tomaz Assunção - RM86675 \n
-Guilherme Augusto de Oliveira Carvalho - RM86734 \n 
-Nicolas Tigle Lins Silva – RM88468 \n
-Victor Rubem Castilho Campos – RM87534 \n  
+#### Amanda da Silva Fernandes - RM86688 
+#### Gabriel Antonio Luiz Tomaz Assunção - RM86675
+#### Guilherme Augusto de Oliveira Carvalho - RM86734 
+#### Nicolas Tigle Lins Silva – RM88468 
+#### Victor Rubem Castilho Campos – RM87534 
 
 # Arquitetura de Solução do Projeto
 
