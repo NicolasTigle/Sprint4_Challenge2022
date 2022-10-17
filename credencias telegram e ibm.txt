@@ -1,0 +1,21 @@
+telegram bot:
+
+name: @SPraiaZenitiBot
+token: 5709104298:AAHLK0JwbQOYgeSuRKUYqEnErZGtwyudVV4
+
+watson assistant
+
+api key: yIUZS2qMMxd9ZI-PP4Dh5ZUpGmWE2sKMos3zmSnGmdSV
+assistant id: 409c4c38-3055-4484-9c4c-074e4006e416
+
+speech to text:
+
+api key: HRPONkEZ5nKRNbCrYRqh1wpVrSZAyOt5WquPoIwnI2ut
+urL: https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/1e0818ca-84ab-4071-96db-b4c95aee7703
+
+text to speech:
+
+api key: 0zE_3f85pyPpZtjvOIyD3EN32d4rmAuMPB8NJ29Uo6AU
+url: https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/a2a7ad51-0b82-465a-9747-02636309abbf
+ 
+
