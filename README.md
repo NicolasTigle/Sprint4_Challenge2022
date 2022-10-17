@@ -2,6 +2,10 @@
 
 ## Projeto SPraia
 
+##Link do vídeo da apresentação:
+
+#### https://youtu.be/2dnAenIBvGc
+
 ### Integrantes do Grupo:
 
 #### Amanda da Silva Fernandes - RM86688 
